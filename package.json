@@ -1,0 +1,26 @@
+{
+  "name": "je-t",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrei-z/je-t.git"
+  },
+  "keywords": [],
+  "author": "andrei-z",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrei-z/je-t/issues"
+  },
+  "homepage": "https://github.com/andrei-z/je-t#readme",
+  "dependencies": {
+    "cypress": "^9.5.0"
+  },
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^2.3.0"
+  }
+}

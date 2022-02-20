@@ -1,0 +1,6 @@
+{
+    "baseUrl": "https://www.thuisbezorgd.nl/en",
+    "defaultCommandTimeout": 8000,
+    "watchForFileChanges": false,
+    "reporter": "cypress-mochawesome-reporter"
+}
