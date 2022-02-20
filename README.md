@@ -3,11 +3,16 @@
 ## Installation
 Requires [Node.js](https://nodejs.org/) v14+ to run
 
-Clone the project and install the dependancies:
+Clone the project and install dependencies:
 ```
 git clone git@github.com:andrei-z/je-t.git
 cd je-t
 npm i
+```
+
+To check Cypress is installed correctly you may execute:
+```
+je-t% npx cypress open
 ```
 
 ## Running tests
@@ -37,6 +42,3 @@ Videos of each test spec execution can be found at:
 ```
 je-t/cypress/videos
 ```
-
-### Disclaimer
-Developed on MacOS, not tested on Windows or Linux
