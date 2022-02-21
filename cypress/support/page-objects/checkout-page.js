@@ -39,19 +39,15 @@ class CheckoutPage {
     get submitPaymentSelectionBtn() {
         return cy.get("button[data-qa='payment-modal-action-submit']");
     }
-
-    get payWith() {
+    get paymentArea() {
         return cy.get("div[data-qa='multi-step-checkout-details-payment']");
     }
-
     get paymentMethodSelected() {
         return cy.get("div[data-qa='multi-step-checkout-details-payment-description']");
     }
-
     get orderAndPayBtn() {
         return cy.get("button[data-qa='multi-step-checkout-action-submit-order']");
     }
-
     get localErrorBanner() {
         return cy.get("div[data-qa='local-error-banner-delivery']");
     }
@@ -77,25 +73,18 @@ class CheckoutPage {
           })
     }
 
-
-    selectPayment(method) {
-        this.payWith.click()
-
-        if (method == 'Cash') {
-            cy.get("div[data-qa='payment-modal-cash']").click();
-        } else if (method == 'iDeal') {
-            cy.get("div[data-qa='payment-modal-iDEAL']").click();
-        } else if (method == 'PayPal') {
-            cy.get("div[data-qa='payment-modal-paypal']").click();
-        } else if (method == 'Creditcard') {
-            cy.get("div[data-qa='payment-modal-creditcard']").click();
-        } else if (method == 'Bitcoin') {
-            cy.get("div[data-qa='payment-modal-bitpay']").click();
-        } else {
-            cy.get("div[data-qa='payment-modal-giftCard']").click();
-        }
-
+    PaymentMethod(locator) {
+        this.paymentArea.click();
+        cy.get(locator).click();
         this.submitPaymentSelectionBtn.click();
+    }
+    selectPayment = {
+        Cash: () => this.PaymentMethod("div[data-qa='payment-modal-cash']"),
+        PayPal: () => this.PaymentMethod("div[data-qa='payment-modal-paypal']"),
+        iDeal: () => this.PaymentMethod("div[data-qa='payment-modal-iDEAL']"),
+        Creditcard: () => this.PaymentMethod("div[data-qa='payment-modal-creditcard']"),
+        Bitcoin: () => this.PaymentMethod("div[data-qa='payment-modal-bitpay']"),
+        VVV: () => this.PaymentMethod("div[data-qa='payment-modal-giftCard']")
     }
 
 }

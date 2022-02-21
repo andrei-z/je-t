@@ -32,7 +32,8 @@ describe('Checkout tests', () => {
 
     it('Select payment method', () => {
         const method = 'Cash';
-        checkoutPage.selectPayment(method);
+
+        checkoutPage.selectPayment.Cash();
 
         checkoutPage.paymentMethodSelected
                 .should('include.text', method);
@@ -40,7 +41,7 @@ describe('Checkout tests', () => {
 
     it('Cannot place order when in a different region', () => {
         checkoutPage.inputDeliveryDataFromFile();
-        checkoutPage.selectPayment('Cash');
+        checkoutPage.selectPayment.Cash();
         checkoutPage.orderAndPayBtn.click();
 
         cy.fixture('delivery-data').then((fileData) => {
